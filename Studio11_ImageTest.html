@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Studio 11 — Photography Portfolio</title>
+  <meta name="description" content="Premium photography portfolio for Studio 11 — film, documentary, and commercial stills." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Tailwind config: set brand color from Studio 11 (#00b5fd)
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#ecfbff',
+              100: '#d5f4ff',
+              200: '#aee9ff',
+              300: '#7fdbff',
+              400: '#4ccaff',
+              500: '#00b5fd', // primary
+              600: '#0090ca',
+              700: '#006f9b',
+              800: '#005578',
+              900: '#063e57'
+            }
+          },
+          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    /* smooth fade-in */
+    .fade-in { animation: fade 0.6s ease both; }
+    @keyframes fade { from { opacity: 0; transform: translateY(6px) } to { opacity: 1; transform: translateY(0) } }
+    /* Lighter default typography */
+    body { font-weight: 300; }
+    h1,h2,h3,h4,h5,h6 { font-weight: 300; }
+    /* Self-test badge */
+    .test-pass{ color:#16a34a }
+    .test-fail{ color:#ef4444 }
+  </style>
+</head>
+<body class="bg-neutral-950 text-neutral-100 font-sans selection:bg-brand-400/30 selection:text-white">
+  <!-- Header (no pictogram) -->
+  <header class="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-neutral-950/70 bg-neutral-950/90">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <a href="#home" class="inline-flex items-center gap-3">
+          <div>
+            <p class="text-sm leading-none text-neutral-300">Studio 11</p>
+            <p class="text-base leading-none">Photography</p>
+          </div>
+        </a>
+        <nav class="hidden md:flex items-center gap-6 text-sm">
+          <a href="#portfolio" class="hover:text-brand-400 transition">Portfolio</a>
+          <a href="#about" class="hover:text-brand-400 transition">About</a>
+          <a href="#services" class="hover:text-brand-400 transition">Services</a>
+          <a href="#contact" class="hover:text-brand-400 transition">Contact</a>
+          <a href="#booking" class="rounded-xl bg-brand-500 text-neutral-950 px-4 py-2 hover:bg-brand-400 transition">Book a Shoot</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="relative overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div class="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-brand-500/10 blur-[80px]"></div>
+      <div class="absolute -bottom-32 -right-32 w-[32rem] h-[32rem] rounded-full bg-brand-500/10 blur-[90px]"></div>
+    </div>
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
+      <div class="grid lg:grid-cols-2 items-center gap-10">
+        <div class="fade-in">
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl tracking-tight">Cinematic photography for film, brands, and people.</h1>
+          <p class="mt-6 text-neutral-300 max-w-xl">We capture honest moments with meticulous color and composition. From unit stills to editorial campaigns, we deliver images that move.</p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="#portfolio" class="rounded-2xl bg-brand-500 px-5 py-3 text-neutral-950 hover:bg-brand-400 transition">View Portfolio</a>
+            <a href="#contact" class="rounded-2xl border border-neutral-800 px-5 py-3 hover:border-neutral-700 hover:bg-white/5 transition">Get in touch</a>
+          </div>
+          <dl class="mt-10 grid grid-cols-3 gap-6 text-center">
+            <div class="rounded-2xl border border-neutral-800 p-4">
+              <dt class="text-xs text-neutral-400">Projects</dt>
+              <dd class="text-2xl">200+</dd>
+            </div>
+            <div class="rounded-2xl border border-neutral-800 p-4">
+              <dt class="text-xs text-neutral-400">Years</dt>
+              <dd class="text-2xl">10</dd>
+            </div>
+            <div class="rounded-2xl border border-neutral-800 p-4">
+              <dt class="text-xs text-neutral-400">Clients</dt>
+              <dd class="text-2xl">120+</dd>
+            </div>
+          </dl>
+        </div>
+        <div class="fade-in lg:justify-self-end">
+          <div class="grid grid-cols-3 gap-3">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&q=80&auto=format&fit=crop" alt="Camera on tripod" class="rounded-2xl object-cover aspect-[4/5]">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1526178612843-4c12b1c34a16?w=800&q=80&auto=format&fit=crop" alt="Portrait light" class="rounded-2xl object-cover aspect-[4/5]">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80&auto=format&fit=crop" alt="City night" class="rounded-2xl object-cover aspect-[4/5]">
+            <img loading="lazy" src="images/Sella.jpg" alt="Film set" class="rounded-2xl object-cover col-span-2 object-cover aspect-[2/1]">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=900&q=80&auto=format&fit=crop" alt="Hands holding camera" class="rounded-2xl object-cover aspect-square">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="portfolio" class="py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex items-end justify-between gap-6">
+        <div>
+          <h2 class="text-3xl sm:text-4xl">Portfolio</h2>
+          <p class="mt-2 text-neutral-300">A curated selection of recent work. Filter by category.</p>
+        </div>
+        <div class="flex flex-wrap gap-2 text-sm">
+          <button class="filter-btn rounded-xl border border-neutral-800 px-3 py-1.5 hover:border-neutral-700" data-filter="*">All</button>
+          <button class="filter-btn rounded-xl border border-neutral-800 px-3 py-1.5 hover:border-neutral-700" data-filter="portrait">Portrait</button>
+          <button class="filter-btn rounded-xl border border-neutral-800 px-3 py-1.5 hover:border-neutral-700" data-filter="editorial">Editorial</button>
+          <button class="filter-btn rounded-xl border border-neutral-800 px-3 py-1.5 hover:border-neutral-700" data-filter="film">Unit Stills</button>
+          <button class="filter-btn rounded-xl border border-neutral-800 px-3 py-1.5 hover:border-neutral-700" data-filter="product">Product</button>
+          <button class="filter-btn rounded-xl border border-neutral-800 px-3 py-1.5 hover:border-neutral-700" data-filter="wedding">Wedding</button>
+        </div>
+      </div>
+
+      <div id="gallery" class="mt-8 columns-1 sm:columns-2 lg:columns-3 gap-4 [column-fill:_balance]" data-testid="gallery"></div>
+
+      <template id="card-template">
+        <figure class="group relative mb-4 break-inside-avoid">
+          <img class="w-full h-auto rounded-2xl object-cover shadow-lg shadow-black/20 group-hover:opacity-95 transition" loading="lazy" alt="" />
+          <figcaption class="absolute inset-x-2 bottom-2 rounded-xl bg-neutral-950/60 backdrop-blur text-xs px-3 py-2 opacity-0 group-hover:opacity-100 transition flex items-center justify-between">
+            <span class="caption"></span>
+            <button class="view-btn inline-flex items-center gap-1 px-2 py-1 rounded-lg bg-brand-500 text-neutral-950 text-[10px]">View</button>
+          </figcaption>
+        </figure>
+      </template>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-20 border-t border-neutral-900">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-3 gap-10 items-start">
+      <div class="lg:col-span-2">
+        <h2 class="text-3xl sm:text-4xl">About</h2>
+        <p class="mt-4 text-neutral-300">Studio 11 is a full-service post and photography house working across film, documentaries, animation, and VFX. We approach stills with the same cinematic eye we bring to moving images—precise lighting, intentional framing, and color you can feel.</p>
+        <p class="mt-4 text-neutral-300">We deliver calibrated Rec.709 masters and print-ready exports. Ask us about custom LUTs and color-managed workflows for consistent brand imagery.</p>
+      </div>
+      <div class="rounded-2xl border border-neutral-900 p-6 bg-neutral-950/60">
+        <h3 class="">Gear</h3>
+        <ul class="mt-3 space-y-2 text-neutral-300 text-sm list-disc list-inside">
+          <li>Canon Cinema + L-series primes</li>
+          <li>Profoto / Aputure lighting kits</li>
+          <li>Color-managed pipeline (C-Log2 → Rec.709)</li>
+          <li>On-set tether & unit stills</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services / Pricing -->
+  <section id="services" class="py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl">Services</h2>
+      <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="rounded-2xl border border-neutral-900 p-6 bg-neutral-950/60">
+          <h3>Portrait Session</h3>
+          <p class="mt-2 text-sm text-neutral-300">90 minutes on location, 15 retouched images.</p>
+          <p class="mt-4 text-2xl">€350</p>
+        </div>
+        <div class="rounded-2xl border border-neutral-900 p-6 bg-neutral-950/60">
+          <h3>Editorial / Campaign</h3>
+          <p class="mt-2 text-sm text-neutral-300">Creative development, crew, lighting, color pipeline.</p>
+          <p class="mt-4 text-2xl">Custom</p>
+        </div>
+        <div class="rounded-2xl border border-neutral-900 p-6 bg-neutral-950/60">
+          <h3>Unit Stills</h3>
+          <p class="mt-2 text-sm text-neutral-300">On-set coverage with silent shutter & color-matched deliverables.</p>
+          <p class="mt-4 text-2xl">Day Rate</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact / Booking -->
+  <section id="contact" class="py-20 border-t border-neutral-900">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl">Contact</h2>
+      <p class="mt-2 text-neutral-300">Based in Prague. Available across EU/UK. Tell us about your project.</p>
+      <form id="booking" class="mt-8 grid gap-4" action="https://formspree.io/f/your-id" method="POST">
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm text-neutral-400">Name</label>
+            <input name="name" required class="mt-1 w-full rounded-xl bg-neutral-900 border border-neutral-800 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-500" placeholder="Your name" />
+          </div>
+          <div>
+            <label class="block text-sm text-neutral-400">Email</label>
+            <input type="email" name="email" required class="mt-1 w-full rounded-xl bg-neutral-900 border border-neutral-800 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-500" placeholder="name@email.com" />
+          </div>
+        </div>
+        <div>
+          <label class="block text-sm text-neutral-400">Project Type</label>
+          <select name="type" class="mt-1 w-full rounded-xl bg-neutral-900 border border-neutral-800 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-500">
+            <option>Portrait</option>
+            <option>Editorial</option>
+            <option>Unit Stills</option>
+            <option>Wedding</option>
+            <option>Product</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-sm text-neutral-400">Message</label>
+          <textarea name="message" rows="5" class="mt-1 w-full rounded-xl bg-neutral-900 border border-neutral-800 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-500" placeholder="Dates, locations, references…"></textarea>
+        </div>
+        <div class="flex items-center justify-between gap-3">
+          <label class="inline-flex items-center gap-2 text-xs text-neutral-400">
+            <input type="checkbox" required class="accent-brand-500" /> I agree to the privacy policy
+          </label>
+          <button class="rounded-2xl bg-brand-500 text-neutral-950 px-6 py-3 hover:bg-brand-400 transition">Send</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <footer class="py-10 border-t border-neutral-900">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-neutral-400">
+      <p>© <span id="year"></span> Studio 11. All rights reserved.</p>
+      <div class="flex items-center gap-4">
+        <a href="#" class="hover:text-brand-400">Instagram</a>
+        <a href="#" class="hover:text-brand-400">Behance</a>
+        <a href="#" class="hover:text-brand-400">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="fixed inset-0 z-50 hidden bg-black/90">
+    <button id="lightboxClose" aria-label="Close" class="absolute top-4 right-4 rounded-xl bg-neutral-900/80 px-3 py-2 border border-neutral-800 hover:bg-neutral-800">Close</button>
+    <div class="h-full w-full grid place-items-center p-4">
+      <img id="lightboxImg" class="max-h-[85vh] max-w-[90vw] rounded-2xl shadow-2xl" alt="Expanded image" />
+    </div>
+  </div>
+
+  <!-- App Script (scoped + idempotent) -->
+  <script>
+  (function(){
+    'use strict';
+    // Prevent duplicate initialization if this script is evaluated multiple times
+    if (window.__studio11Initialized) return; 
+    window.__studio11Initialized = true;
+
+    // ======== Data: Replace with your own images & captions ========
+    const IMAGES = [
+      { src: 'images/Couples.jpg', alt: 'Portrait in soft light', tag: 'portrait' },
+      { src: 'https://images.unsplash.com/photo-1503342331013-7b7bbff0fdd7?w=1400&q=80&auto=format&fit=crop', alt: 'Editorial street fashion', tag: 'editorial' },
+      { src: 'https://images.unsplash.com/photo-1542208998-f6bc-4ddc-bc82-4c1b5998d5f2?w=1400&q=80&auto=format&fit=crop', alt: 'On-set unit still', tag: 'film' },
+      { src: 'https://images.unsplash.com/photo-1519642918688-7e43b19245d8?w=1400&q=80&auto=format&fit=crop', alt: 'Product still life', tag: 'product' },
+      { src: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=1400&q=80&auto=format&fit=crop', alt: 'Natural light headshot', tag: 'portrait' },
+      { src: 'https://images.unsplash.com/photo-1512446816042-444d64126704?w=1400&q=80&auto=format&fit=crop', alt: 'Editorial studio set', tag: 'editorial' },
+      { src: 'https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?w=1400&q=80&auto=format&fit=crop', alt: 'Wedding candid moment', tag: 'wedding' },
+      { src: 'https://images.unsplash.com/photo-1511578314322-379afb476865?w=1400&q=80&auto=format&fit=crop', alt: 'Cinematic night city', tag: 'film' },
+      { src: 'https://images.unsplash.com/photo-1503602642458-232111445657?w=1400&q=80&auto=format&fit=crop', alt: 'Product macro detail', tag: 'product' },
+      { src: 'https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0?w=1400&q=80&auto=format&fit=crop', alt: 'Wedding portrait', tag: 'wedding' },
+    ];
+
+    // ======== Render Masonry-like gallery using CSS columns ========
+    const gallery = document.getElementById('gallery');
+    const cardTpl = document.getElementById('card-template');
+
+    function openLightbox(src){
+      lightboxImg.src = src;
+      lightbox.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox(){
+      lightbox.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    function render(filter = '*') {
+      if(!gallery || !cardTpl) return;
+      gallery.innerHTML = '';
+      IMAGES.filter(({tag}) => filter === '*' || tag === filter).forEach((item) => {
+        const node = cardTpl.content.cloneNode(true);
+        const img = node.querySelector('img');
+        img.src = item.src;
+        img.alt = item.alt;
+        img.decoding = 'async';
+        img.addEventListener('click', () => openLightbox(item.src));
+        node.querySelector('.caption').textContent = item.alt;
+        node.querySelector('.view-btn').addEventListener('click', () => openLightbox(item.src));
+        gallery.appendChild(node);
+      });
+    }
+
+    // ======== Filters ========
+    const buttons = document.querySelectorAll('.filter-btn');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('bg-neutral-900', 'text-white'));
+        btn.classList.add('bg-neutral-900', 'text-white');
+        render(btn.dataset.filter);
+      });
+    });
+
+    // ======== Lightbox ========
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxClose = document.getElementById('lightboxClose');
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => { if(e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', (e) => { if(e.key === 'Escape' && !lightbox.classList.contains('hidden')) closeLightbox(); });
+
+    // ======== Misc ========
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    // Initial state
+    render();
+    // Mark "All" active by default
+    const allBtn = Array.from(buttons).find(b => b.dataset.filter === '*');
+    if (allBtn) allBtn.classList.add('bg-neutral-900','text-white');
+
+    // ======== Simple Self-Tests (runtime) ========
+    setTimeout(() => {
+      const tests = [];
+      const assert = (name, cond) => tests.push({name, pass: !!cond});
+
+      // Test 1: gallery has items after initial render
+      assert('gallery renders items', gallery && gallery.querySelectorAll('figure').length > 0);
+
+      // Test 2: filter reduces or equals item count when applying a specific tag
+      const initialCount = gallery ? gallery.querySelectorAll('figure').length : 0;
+      render('portrait');
+      const portraitCount = gallery ? gallery.querySelectorAll('figure').length : 0;
+      assert('filter applies without error', portraitCount >= 0 && portraitCount <= initialCount);
+
+      // Test 3: lightbox opens and closes
+      const firstImg = gallery ? gallery.querySelector('img') : null;
+      if (firstImg) firstImg.click();
+      assert('lightbox opens', !lightbox.classList.contains('hidden'));
+      closeLightbox();
+      assert('lightbox closes', lightbox.classList.contains('hidden'));
+
+      // Report (no icons)
+      const panel = document.getElementById('test-panel');
+      if (panel) {
+        panel.innerHTML = tests.map(t => `
+          <li class="flex items-center gap-2">
+            <span class="${t.pass ? 'test-pass' : 'test-fail'}">${t.pass ? 'PASS' : 'FAIL'}</span>
+            <span>${t.name}</span>
+          </li>`).join('');
+      }
+
+      // Re-render all at end
+      render('*');
+      if (allBtn) {
+        buttons.forEach(b => b.classList.remove('bg-neutral-900','text-white'));
+        allBtn.classList.add('bg-neutral-900','text-white');
+      }
+    }, 0);
+  })();
+  </script>
+
+  <!-- Self-test results (collapsible) -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
+    <details class="mt-4 border border-neutral-900 rounded-2xl bg-neutral-950/60">
+      <summary class="cursor-pointer px-4 py-3 text-sm text-neutral-300">Runtime self-tests</summary>
+      <ul id="test-panel" class="p-4 text-sm space-y-2"></ul>
+    </details>
+  </div>
+</body>
+</html>
